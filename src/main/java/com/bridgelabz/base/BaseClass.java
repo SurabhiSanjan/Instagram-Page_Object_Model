@@ -3,6 +3,8 @@ package com.bridgelabz.base;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -15,7 +17,7 @@ public class BaseClass {
         log = Logger.getLogger(BaseClass.class.getName());
         PropertyConfigurator.configure("C:\\Users\\atulk\\IdeaProjects\\POM-Instagram\\log4j.properties");
         //WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+     driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://www.instagram.com/");
         log.info("Chrome Browser has been launched");

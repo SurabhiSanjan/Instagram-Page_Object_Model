@@ -17,6 +17,7 @@ public class DataDriven {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             this.wk = new XSSFWorkbook(fileInputStream);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException ex) {
@@ -24,7 +25,7 @@ public class DataDriven {
         }
     }
 
-    public String getData(int sheetNo, int row, int column ) {
+    public String getData(int sheetNo, int row, int column) {
         this.sheet = this.wk.getSheetAt(sheetNo);
         Cell cell = this.sheet.getRow(row).getCell(column);
         String data = cell.getStringCellValue();
@@ -36,6 +37,5 @@ public class DataDriven {
         ++rowNumber;
         return rowNumber;
     }
-
-    }
+}
 

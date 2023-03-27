@@ -17,7 +17,7 @@ public class LoginPage {
    WebElement password;
 
    @CacheLookup
-   @FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[3]/button/div")
+   @FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/article/div[2]/div[1]/div[2]/form/div/div[3]")
    WebElement loginButton;
 
    public LoginPage(WebDriver driver) {
@@ -26,12 +26,13 @@ public class LoginPage {
    }
 
    public void loginInToTheInstagram(String uName, String pass) throws InterruptedException {
+      // driver.findElement(By.name(properties.getProperty("LoginUserNameData"))).sendKeys(uName);
       userName.sendKeys(uName);
-      Thread.sleep(1000);
+      Thread.sleep(500);
       password.sendKeys(pass);
-      Thread.sleep(1000);
+      Thread.sleep(2000);
       loginButton.click();
-      Thread.sleep(1000);
+      Thread.sleep(2000);
       redirectOnToTheHomePage();
    }
 
